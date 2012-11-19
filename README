@@ -4,11 +4,7 @@
 #	http://laurie.denness.net - laurie@denness.net
 #
 
-DISCLAIMER: I am not a PHP developer. I am a sysadmin. This code is NOT glaramous; I didn't 
-even write half of it, I adapted it from Naglite, which is available on Nagios Exchange...
-but it works. If you have any problems, I'm sure they won't be hard to solve; and I cannot be
-held responsible if you lose data, time, your girlfriend, your house, or anything else from
-using this code.
+DISCLAIMER: I am not a PHP developer. I am a sysadmin. This code is NOT glaramous; I didn't even write half of it, I adapted it from Naglite, which is available on Nagios Exchange... but it works. If you have any problems, I'm sure they won't be hard to solve; and I cannot be held responsible if you lose data, time, your girlfriend, your house, or anything else from using this code.
 
 
 
@@ -23,30 +19,21 @@ using this code.
 
 1. Limitations 
 
-If the format of the Nagios status.dat file changes, this will quickly become useless. The 
-parsing used in these scripts relies on things being in a certain place. If you're not as lazy
-as me, you could re-write it, but there's nothing to say they won't change it completely including
-changing the names of the variables. Normally it's not too difficult to find out what's changed.. 
-Compare the two status files, note if there is a difference in ordering, or things added and removed. 
+If the format of the Nagios status.dat file changes, this will quickly become useless. The parsing used in these scripts relies on things being in a certain place. If you're not as lazy as me, you could re-write it, but there's nothing to say they won't change it completely including changing the names of the variables. Normally it's not too difficult to find out what's changed.. Compare the two status files, note if there is a difference in ordering, or things added and removed. 
 
-However, I rely on this every day, so I will probably update it as soon as I update Nagios. You
-should only need to modify this if you're using an OLDER version of Nagios than is the current one.
+However, I rely on this every day, so I will probably update it as soon as I update Nagios. You should only need to modify this if you're using an OLDER version of Nagios than is the current one.
 
 
 
 2. What it does
 
-Nagios doesn't have a decent screen that works viewed from a long way away that tells you what's
-broken. This has always seemed strange to me, given it's the most used software to monitor status,
-and most places that have monitoring have NOCs, and thus screens hanging from various places. 
+Nagios doesn't have a decent screen that works viewed from a long way away that tells you what's broken. This has always seemed strange to me, given it's the most used software to monitor status, and most places that have monitoring have NOCs, and thus screens hanging from various places. 
 
-This script parses the Nagios status file directly, and produces a view that in a web browser (and
-zoomed to the appropriate level for your use) clearly shows the status of your hosts and services. 
+This script parses the Nagios status file directly, and produces a view that in a web browser (and zoomed to the appropriate level for your use) clearly shows the status of your hosts and services. 
 
 It can also be used to give a good view on a mobile phone, if you're out and about. 
 
-This application uses probably the only valid use of the HTML blink tag/CSS, for when a service/host
-is critical. 
+This application uses probably the only valid use of the HTML blink tag/CSS, for when a service/host is critical. 
 
 This is how it looks: http://www.flickr.com/photos/lozzd/3210502566/
 
@@ -54,19 +41,15 @@ This is how it looks: http://www.flickr.com/photos/lozzd/3210502566/
 
 3. Configuration
 
-Put the code in a folder on your web server. This web server needs access to wherever your status.dat
-file is.. I don't mind how you do that, use NFS if you have to. I run it on the same machine as I run
-Nagios anyway.
+Put the code in a folder on your web server. This web server needs access to wherever your status.dat file is.. I don't mind how you do that, use NFS if you have to. I run it on the same machine as I run Nagios anyway.
 
-Then all you need to do is check the top line ($cgi_ini) of inc.php is the path to your Nagios installation
-(more specifically you need to point it at the CGI config file, usually called cgi.cfg). 
+Then all you need to do is check the top line ($cgi_ini) of inc.php is the path to your Nagios installation (more specifically you need to point it at the CGI config file, usually called cgi.cfg). 
 
 
 
 4. Using Naglite2
 
-Open the folder in your browser, and with a bit of luck you should see your Nagios status. 
-I suggest Google Chrome, more here:
+Open the folder in your browser, and with a bit of luck you should see your Nagios status. I suggest Google Chrome, more here:
 http://laurie.denness.net/blog/2009/05/finding-a-web-browser-for-constant-page-reloading/
 
 e.g. http://host/naglite2/
@@ -75,11 +58,7 @@ e.g. http://host/naglite2/
 
 5. Hints and tips
 
-If displaying this unattended constantly, it is a good idea to use a method to turn off the
-display when no one will be looking at it (if possible!). On Windows, I provide a couple of
-small .exe files, one which sleeps the displays, and one to wake them. You can then use
-Task Scheduler to have the monitors be controlled automatically. Using Linux, you can use
-dpms to sleep and wake the monitors using cron.
+If displaying this unattended constantly, it is a good idea to use a method to turn off the display when no one will be looking at it (if possible!). On Windows, I provide a couple of small .exe files, one which sleeps the displays, and one to wake them. You can then use Task Scheduler to have the monitors be controlled automatically. Using Linux, you can use dpms to sleep and wake the monitors using cron.
 
 
 6. Help me!
@@ -88,5 +67,4 @@ No! Well maybe. Send me an email, and I can probably offer some advice. I apolog
 
 7. Attributions
 
-This code uses Duration.php which is a class that turns durations into more friendly, readable 
-versions. (e.g. 2 days ago). This was written by Aidan Lister <aidan@php.net>
+This code uses Duration.php which is a class that turns durations into more friendly, readable versions. (e.g. 2 days ago). This was written by Aidan Lister <aidan@php.net>
